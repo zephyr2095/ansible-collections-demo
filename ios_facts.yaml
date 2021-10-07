@@ -1,0 +1,15 @@
+---
+- name: "GATHER IOS FACTS PLAYBOOK"
+  hosts: all
+
+  tasks:
+    - name: "IOS GATHER FACTS"
+      cisco.ios.ios_facts:
+        gather_subset: "all"
+
+    - name: "PRINT FACTS"
+      ansible.builtin.debug:
+        msg:
+          - "OS Version: {{ ansible_net_version }}"
+          - "Model: {{ ansible_net_model }}"
+...
