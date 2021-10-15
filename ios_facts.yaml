@@ -1,6 +1,6 @@
 ---
 - name: "GATHER IOS FACTS PLAYBOOK"
-  hosts: all
+  hosts: "ios_switches:ios_routers"
 
   tasks:
     - name: "IOS GATHER FACTS"

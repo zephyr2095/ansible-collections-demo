@@ -1,6 +1,6 @@
 ---
 - name: "GATHER NXOS FACTS PLAYBOOK"
-  hosts: all
+  hosts: "nxos_switches"
 
   tasks:
     - name: "GATHER NXOS FACTS"
