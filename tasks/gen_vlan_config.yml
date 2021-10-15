@@ -1,0 +1,10 @@
+---
+# Generate vlan configuration file using jinja2 templates
+# Configuration is based off network os
+
+- name: "GENERATE CONFIGURATION USING JINJA2 TEMPLATE"
+  ansible.builtin.template:
+    src: "templates/{{ ansible_network_os }}_add_vlans.j2"
+    dest: "config_files/{{ inventory_hostname }}_vlan.txt"
+  changed_when: "false"
+...

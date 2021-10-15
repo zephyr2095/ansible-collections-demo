@@ -1,0 +1,22 @@
+---
+# Playbook configures vlans on Cisco IOS and NXOS devices
+
+- name: "ADD VLANS"
+  hosts: switches
+
+  tasks:
+    - name: "INCLUDE >> GENERATE CONFIG"
+      ansible.builtin.include_tasks: "tasks/gen_vlan_config.yml"
+
+    - name: "INCLUDE >> PUSH CONFIG"
+      ansible.builtin.include_tasks: "tasks/{{ ansible_network_os }}_vlan.yml"
+
+  handlers:
+    - name: "IOS VLAN UPDATES"
+      ansible.builtin.debug:
+        var: IOS_VLAN_CONFIG.updates
+    
+    - name: "NXOS VLAN UPDATES"
+      ansible.builtin.debug:
+        var: NXOS_VLAN_CONFIG.updates
+...

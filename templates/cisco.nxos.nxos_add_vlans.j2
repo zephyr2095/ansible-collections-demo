@@ -1,0 +1,6 @@
+{# Template to ADD vlans to Cisco IOS devices #}
+{# CISCO NXOS has 2 space of indentation #}
+{% for vlan in vlans %}
+vlan {{ vlan.vlan_id }}
+  name {{ vlan.vlan_name }}
+{% endfor %}

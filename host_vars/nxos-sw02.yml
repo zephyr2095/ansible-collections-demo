@@ -1,0 +1,7 @@
+---
+# Host variable file for nxos-sw02
+
+vlans:
+  - vlan_id: 100
+    vlan_name: SALES
+...
