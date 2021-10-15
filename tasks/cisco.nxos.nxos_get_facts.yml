@@ -1,0 +1,5 @@
+---
+- name: "GATHER NXOS FACTS"
+  cisco.nxos.nxos_facts:
+    gather_subset: "!interfaces"
+...

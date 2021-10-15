@@ -1,0 +1,5 @@
+---
+- name: "IOS GATHER FACTS"
+  cisco.ios.ios_facts:
+    gather_subset: "all"
+...

@@ -1,0 +1,14 @@
+---
+- name: "GATHER FACTS USING TASKS BASED ON DEVICE OS"
+  hosts: "all"
+
+  tasks:
+    - name: "INCLUDE >> GET FACTS"
+      ansible.builtin.include_tasks: "tasks/{{ ansible_network_os }}_get_facts.yml"
+    
+    - name: "PRINT FACTS"
+      ansible.builtin.debug:
+        msg:
+          - "OS Version: {{ ansible_net_version }}"
+          - "Model: {{ ansible_net_model }}"
+...
