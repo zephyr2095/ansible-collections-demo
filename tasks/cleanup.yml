@@ -1,0 +1,9 @@
+---
+# Clean up temp config files
+
+- name: "CLEANUP TEMP CONFIGURATION FILES"
+  ansible.builtin.file:
+    path: "./config_files/{{ inventory_hostname }}_vlan.txt"
+    state: "absent"
+  changed_when: "false"
+...
