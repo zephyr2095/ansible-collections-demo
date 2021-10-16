@@ -10,6 +10,9 @@
 
     - name: "INCLUDE >> PUSH CONFIG"
       ansible.builtin.include_tasks: "tasks/{{ ansible_network_os }}_vlan.yml"
+    
+    - name: "INCLUDE >> CLEANUP FILES"
+      ansible.builtin.include_tasks: "tasks/cleanup.yml"
 
   handlers:
     - name: "IOS VLAN UPDATES"
