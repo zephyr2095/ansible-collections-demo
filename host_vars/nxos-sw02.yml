@@ -1,7 +1,20 @@
 ---
 # Host variable file for nxos-sw02
 
+# Enable nxapi connection and use HTTPS
+ansible_connection: "ansible.netcommon.httpapi"
+ansible_httpapi_use_ssl: "yes"
+ansible_httpapi_validate_certs: "no"
+
 vlans:
   - vlan_id: 100
     vlan_name: SALES
+  - vlan_id: 200
+    vlan_name: ACCOUNTING
+
+features:
+  - ospf
+  - bgp
+  - nv overlay
+  - fabric forwarding
 ...
